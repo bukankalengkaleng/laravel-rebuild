@@ -112,13 +112,7 @@ class Rebuild extends Command
     protected function runSelfDiagnosis()
     {
         $this->info('[START] Run self-diagnosis..........');
-
-        $this->call('vendor:publish', [
-            '--provider' => 'BeyondCode\\SelfDiagnosis\\SelfDiagnosisServiceProvider'
-        ]);
-
         $this->call('self-diagnosis');
-
         $this->info('[DONE ] Run self-diagnosis.');
     }
 }
