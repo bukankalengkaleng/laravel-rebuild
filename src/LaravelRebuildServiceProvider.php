@@ -3,6 +3,7 @@
 namespace BukanKalengKaleng\LaravelRebuild;
 
 use Illuminate\Support\ServiceProvider;
+use BukanKalengKaleng\LaravelRebuild\Console\Commands\Rebuild;
 
 class LaravelRebuildServiceProvider extends ServiceProvider
 {
@@ -15,7 +16,7 @@ class LaravelRebuildServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                //
+                Rebuild::class
             ]);
         }
     }
