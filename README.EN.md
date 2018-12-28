@@ -44,7 +44,7 @@ The rebuilding process of your app could take a time, by running artisan command
     - Rebuild packages
     - Create symbolic link
 
-    <img src="screenshots/01.png" width="90%">
+    <img src="screenshots/01.png" width="80%">
 
 You can adjust how rebuilding process will take action via `config/rebuild.php` file, which you have to publish first:
 

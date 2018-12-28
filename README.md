@@ -46,7 +46,7 @@ Proses rebuild aplikasi cukup memakan waktu dengan melakukan rangkaian perintah 
     - Rebuild packages
     - Create symbolic link
 
-    <img src="screenshots/01.png" width="90%">
+    <img src="screenshots/01.png" width="80%">
 
 Proses *rebuilding* diatas dapat kamu atur dalam `config/rebuild.php`, yang harus kamu publish dahulu dengan cara:
 
