@@ -14,9 +14,17 @@
     ],
     "minimum-stability": "dev",
     "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
     "autoload": {
         "psr-4": {
             "BukanKalengKaleng\\LaravelRebuild\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BukanKalengKaleng\\LaravelRebuild\\Tests\\": "tests/"
         }
     },
     "extra": {
