@@ -40,13 +40,13 @@ class Rebuild extends Command
     {
         if (App::environment(['prod', 'production'])) {
             if ($this->confirm('You are in PRODUCTION environment. Continue?')) {
-                $this->commandOperations();
+                $this->rebuildSequence();
 
                 return;
             }
         }
 
-        $this->commandOperations();
+        $this->rebuildSequence();
     }
 
     /**
@@ -54,7 +54,7 @@ class Rebuild extends Command
      *
      * @return mixed
      */
-    protected function commandOperations()
+    protected function rebuildSequence()
     {
         $this->line('');
         $this->call('migrate:fresh');
@@ -99,5 +99,26 @@ class Rebuild extends Command
         $this->callSilent('storage:link');
         $this->info('[DONE ] Create a symbolic link.');
         $this->line('');
+
+        $this->runSelfDiagnosis();
+        $this->line('');
+    }
+
+    /**
+     * Run BeyondCode's Laravel Self-Diagnosis command
+     *
+     * @return void
+     */
+    protected function runSelfDiagnosis()
+    {
+        $this->info('[START] Run self-diagnosis..........');
+
+        $this->call('vendor:publish', [
+            '--provider' => 'BeyondCode\\SelfDiagnosis\\SelfDiagnosisServiceProvider'
+        ]);
+
+        $this->call('self-diagnosis');
+
+        $this->info('[DONE ] Run self-diagnosis.');
     }
 }

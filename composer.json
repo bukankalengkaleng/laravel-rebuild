@@ -13,7 +13,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "beyondcode/laravel-self-diagnosis": "dev-master"
+    },
     "require-dev": {
         "phpunit/phpunit": "^7.0"
     },
