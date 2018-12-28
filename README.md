@@ -8,22 +8,26 @@
 
 ## Motivasi
 
-Proses rebuild aplikasi cukup memakan waktu dengan melakukan rangkaian perintah artisan seperti: clearing caches, making fresh database schema, seeding initial data, seeding dummy data (if any), importing files (if any), dsb. *Artisan command* ini akan mempermudahnya.
+Proses rebuild aplikasi cukup memakan waktu dengan melakukan rangkaian perintah artisan seperti: *clearing caches, making fresh database schema, seeding initial data, seeding dummy data (if any), importing files (if any)*, dsb.  
+
+*Artisan command* ini akan mempermudahnya.
 
 ## Instalasi
 
-```
-composer require bukankalengkaleng/laravel-rebuild
-```
+1. Jalankan perintah `composer`
+    ```
+    composer require bukankalengkaleng/laravel-rebuild
+    ```
 
-Laravel v5.5 dan keatas akan otomatis meregistrasi package ini. Jika kamu menggunakan versi dibawah itu, kamu perlu melakukannya secara manual dalam file `config/app.php`:
+    Laravel v5.5 dan keatas akan otomatis meregistrasi package ini. Jika kamu menggunakan versi dibawah itu, kamu perlu melakukannya secara manual dalam file `config/app.php`:
 
-```php
-'providers' => [
-    // ...
-    BukanKalengKaleng\LaravelRebuild\LaravelRebuildServiceProvider::class,
-];
-```
+    ```php
+    'providers' => [
+        // ...
+        BukanKalengKaleng\LaravelRebuild\LaravelRebuildServiceProvider::class,
+    ];
+    ```
+1. Pastikan aplikasi sudah bisa konek ke *database*
 
 ## Cara Menggunakan
 
