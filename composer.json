@@ -1,0 +1,14 @@
+{
+    "name": "bukankalengkaleng/laravel-rebuild",
+    "description": "An artisan command to rebuild your app",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "R. Kukuh",
+            "email": "rkukuh@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
