@@ -3,12 +3,27 @@
     "description": "An artisan command to rebuild your app",
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/bukankalengkaleng/laravel-rebuild",
     "authors": [
         {
             "name": "R. Kukuh",
-            "email": "rkukuh@gmail.com"
+            "email": "rkukuh@gmail.com",
+            "homepage": "http://rkukuh.github.io",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "BukanKalengKaleng\\LaravelRebuild\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BukanKalengKaleng\\LaravelRebuild\\LaravelRebuildServiceProvider"
+            ]
+        }
+    }
 }
