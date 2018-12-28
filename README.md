@@ -36,7 +36,17 @@ Proses rebuild aplikasi cukup memakan waktu dengan melakukan rangkaian perintah 
     php artisan rebuild
     ```
 1. Proses *rebuilding* aplikasi yang akan dilakukan adalah sebagai berikut:
-    - ???
+    - Re-create database schema
+    - Cache clear
+    - Config clear
+    - Route clear
+    - View clear
+    - Flush expired passwords
+    - Compiled files clear
+    - Rebuild packages
+    - Create symbolic link
+
+    <img src="screenshots/01.png" width="90%">
 
 Proses *rebuilding* diatas dapat kamu atur dalam `config/rebuild.php`, yang harus kamu publish dahulu dengan cara:
 

@@ -34,7 +34,17 @@ The rebuilding process of your app could take a time, by running artisan command
     php artisan rebuild
     ```
 1. The rebuilding process will take actions as follow:
-    - ???
+    - Re-create database schema
+    - Cache clear
+    - Config clear
+    - Route clear
+    - View clear
+    - Flush expired passwords
+    - Compiled files clear
+    - Rebuild packages
+    - Create symbolic link
+
+    <img src="screenshots/01.png" width="90%">
 
 You can adjust how rebuilding process will take action via `config/rebuild.php` file, which you have to publish first:
 
