@@ -1,6 +1,6 @@
 # <img src="https://seeklogo.com/images/L/laravel-logo-9B01588B1F-seeklogo.com.png" width="24px"> Laravel Rebuild ☄️
 
-> This readme is written in Bahasa. [English version is here](https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/README.EN.md).
+> Readme ini ditulis dalam bahasa Inggris. [Versi bahasa Indonesianya ada disini](https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/README.md).
 
 ## Description
 
