@@ -51,7 +51,7 @@ Artisan *command* ini akan mempermudahnya.
 
     <img src="screenshots/02.png" width="75%">
 
-Proses *rebuilding* diatas dapat kamu atur dalam `config/rebuild.php`, yang harus kamu publish dahulu dengan cara:
+Proses *rebuilding* diatas dapat kamu atur dalam `config/rebuild.php`, yang harus kamu *publish* dahulu dengan cara:
 
 ```
 php artisan vendor:publish --tag="laravel-rebuild"
