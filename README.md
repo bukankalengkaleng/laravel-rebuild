@@ -6,17 +6,17 @@
 
 ## Deskripsi
 
-*Artisan command* untuk me-*rebuild* aplikasi Laravel.
+Artisan *command* untuk me-*rebuild* aplikasi Laravel.
 
 ## Motivasi
 
-Proses rebuild aplikasi cukup memakan waktu dengan melakukan rangkaian perintah artisan seperti: *clearing caches, making fresh database schema, seeding initial data, seeding dummy data (if any), importing files (if any)*, dsb.  
+Proses *rebuild* aplikasi cukup memakan waktu dengan melakukan rangkaian perintah artisan seperti: *clearing caches, making fresh database schema, seeding initial data, seeding dummy data (if any), importing files (if any)*, dsb.  
 
-*Artisan command* ini akan mempermudahnya.
+Artisan *command* ini akan mempermudahnya.
 
 ## Instalasi
 
-1. Jalankan perintah `composer`
+1. Jalankan perintah:
     ```
     composer require bukankalengkaleng/laravel-rebuild
     ```
