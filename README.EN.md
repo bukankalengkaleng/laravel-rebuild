@@ -16,7 +16,7 @@ The rebuilding process of your app could take a time, by running artisan command
 
 1. Run this command:
     ```
-    composer require bukankalengkaleng/laravel-rebuild
+    composer require --dev bukankalengkaleng/laravel-rebuild
     ```
 
     In Laravel 5.5 the service provider will automatically get registered. In older versions of the framework just add the service provider in `config/app.php` file:

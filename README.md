@@ -18,7 +18,7 @@ Artisan *command* ini akan mempermudahnya.
 
 1. Jalankan perintah:
     ```
-    composer require bukankalengkaleng/laravel-rebuild
+    composer require --dev bukankalengkaleng/laravel-rebuild
     ```
 
     Laravel v5.5 dan keatas akan otomatis meregistrasi package ini. Jika kamu menggunakan versi dibawah itu, kamu perlu melakukannya secara manual dalam file `config/app.php`:
