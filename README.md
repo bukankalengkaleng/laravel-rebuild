@@ -33,7 +33,7 @@ Proses rebuild aplikasi cukup memakan waktu dengan melakukan rangkaian perintah 
 
 ## Cara Menggunakan
 
-1. Jalankan artisan `rebuild` seperti berikut:
+1. Jalankan perintah:
     ```
     php artisan rebuild
     ```
@@ -47,8 +47,9 @@ Proses rebuild aplikasi cukup memakan waktu dengan melakukan rangkaian perintah 
     - Compiled files clear
     - Rebuild packages
     - Create symbolic link
+    - Self diagnosis
 
-    <img src="screenshots/01.png" width="80%">
+    <img src="screenshots/02.png" width="75%">
 
 Proses *rebuilding* diatas dapat kamu atur dalam `config/rebuild.php`, yang harus kamu publish dahulu dengan cara:
 

@@ -14,7 +14,7 @@ The rebuilding process of your app could take a time, by running artisan command
 
 ## Installation
 
-1. Run a `composer`
+1. Run this command:
     ```
     composer require bukankalengkaleng/laravel-rebuild
     ```
@@ -45,8 +45,9 @@ The rebuilding process of your app could take a time, by running artisan command
     - Compiled files clear
     - Rebuild packages
     - Create symbolic link
+    - Self diagnosis
 
-    <img src="screenshots/01.png" width="80%">
+    <img src="screenshots/02.png" width="75%">
 
 You can adjust how rebuilding process will take action via `config/rebuild.php` file, which you have to publish first:
 
