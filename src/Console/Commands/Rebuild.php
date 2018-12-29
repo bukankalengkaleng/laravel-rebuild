@@ -57,51 +57,162 @@ class Rebuild extends Command
     protected function rebuildSequence()
     {
         $this->line('');
-        $this->call('migrate:fresh');
+
+        $this->rebuildDatabaseSchema();
         $this->line('');
 
-        $this->info('[START] Flush the application cache..........');
-        $this->callSilent('cache:clear');
-        $this->info('[DONE ] Flush the application cache.');
+        $this->clearCache();
         $this->line('');
 
-        $this->info('[START] Remove the configuration cache file..........');
-        $this->callSilent('config:clear');
-        $this->info('[DONE ] Remove the configuration cache file.');
+        $this->clearConfig();
         $this->line('');
 
-        $this->info('[START] Remove the route cache file..........');
-        $this->callSilent('route:clear');
-        $this->info('[DONE ] Remove the route cache file.');
+        $this->clearRoute();
         $this->line('');
 
-        $this->info('[START] Clear all compiled view files..........');
-        $this->callSilent('view:clear');
-        $this->info('[DONE ] Clear all compiled view files.');
+        $this->clearView();
         $this->line('');
 
-        $this->info('[START] Flush expired password reset tokens..........');
-        $this->callSilent('auth:clear-resets');
-        $this->info('[DONE ] Flush expired password reset tokens.');
+        $this->flushExpiredPasswordResetToken();
         $this->line('');
 
-        $this->info('[START] Clear compiled class files..........');
-        $this->callSilent('clear-compiled');
-        $this->info('[DONE ] Clear compiled class files.');
+        $this->clearCompiledClasses();
         $this->line('');
 
-        $this->info('[START] Rebuild the cached package manifest..........');
-        $this->callSilent('package:discover');
-        $this->info('[DONE ] Rebuild the cached package manifest.');
+        $this->rediscoverPackages();
         $this->line('');
 
-        $this->info('[START] Create a symbolic link..........');
-        $this->callSilent('storage:link');
-        $this->info('[DONE ] Create a symbolic link.');
+        $this->createSymbolicLink();
         $this->line('');
 
         $this->runSelfDiagnosis();
         $this->line('');
+    }
+
+    /**
+     * Rebuild database schema
+     *
+     * @return void
+     */
+    protected function rebuildDatabaseSchema()
+    {
+        $this->info('[START] Rebuild database schema..........');
+
+        $this->call('migrate:fresh');
+
+        $this->info('[DONE ] Rebuild database schema.');
+    }
+
+    /**
+     * Clear cache
+     *
+     * @return void
+     */
+    protected function clearCache()
+    {
+        $this->info('[START] Flush the application cache..........');
+
+        $this->callSilent('cache:clear');
+
+        $this->info('[DONE ] Flush the application cache.');
+    }
+
+    /**
+     * Clear config
+     *
+     * @return void
+     */
+    protected function clearConfig()
+    {
+        $this->info('[START] Remove the configuration cache file..........');
+
+        $this->callSilent('config:clear');
+
+        $this->info('[DONE ] Remove the configuration cache file.');
+    }
+
+    /**
+     * Clear route
+     *
+     * @return void
+     */
+    protected function clearRoute()
+    {
+        $this->info('[START] Remove the route cache file..........');
+
+        $this->callSilent('route:clear');
+
+        $this->info('[DONE ] Remove the route cache file.');
+    }
+
+    /**
+     * Clear view
+     *
+     * @return void
+     */
+    protected function clearView()
+    {
+        $this->info('[START] Clear all compiled view files..........');
+
+        $this->callSilent('view:clear');
+
+        $this->info('[DONE ] Clear all compiled view files.');
+    }
+
+    /**
+     * Flush expired password reset token
+     *
+     * @return void
+     */
+    protected function flushExpiredPasswordResetToken()
+    {
+        $this->info('[START] Flush expired password reset tokens..........');
+
+        $this->callSilent('auth:clear-resets');
+
+        $this->info('[DONE ] Flush expired password reset tokens.');
+    }
+
+    /**
+     * Clear compiled classes
+     *
+     * @return void
+     */
+    protected function clearCompiledClasses()
+    {
+        $this->info('[START] Clear compiled class files..........');
+
+        $this->callSilent('clear-compiled');
+
+        $this->info('[DONE ] Clear compiled class files.');
+    }
+
+    /**
+     * Rebuild packages manifest cache
+     *
+     * @return void
+     */
+    protected function rediscoverPackages()
+    {
+        $this->info('[START] Rebuild the cached package manifest..........');
+
+        $this->callSilent('package:discover');
+
+        $this->info('[DONE ] Rebuild the cached package manifest.');
+    }
+
+    /**
+     * Create symbolic link
+     *
+     * @return void
+     */
+    protected function createSymbolicLink()
+    {
+        $this->info('[START] Create a symbolic link..........');
+
+        $this->callSilent('storage:link');
+
+        $this->info('[DONE ] Create a symbolic link.');
     }
 
     /**
@@ -112,7 +223,9 @@ class Rebuild extends Command
     protected function runSelfDiagnosis()
     {
         $this->info('[START] Run self-diagnosis..........');
+
         $this->call('self-diagnosis');
+
         $this->info('[DONE ] Run self-diagnosis.');
     }
 }
