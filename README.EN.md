@@ -37,6 +37,9 @@ The rebuilding process of your app could take a time, by running artisan command
     ```
 1. The rebuilding process will take actions as follow:
     - Re-create database schema
+    - Seeding initial data
+    - Seeding dummy data, if any
+    - Seeding example data, if any
     - Cache clear
     - Config clear
     - Route clear

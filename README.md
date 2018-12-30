@@ -39,6 +39,9 @@ Artisan *command* ini akan mempermudahnya.
     ```
 1. Proses *rebuilding* aplikasi yang akan dilakukan adalah sebagai berikut:
     - Re-create database schema
+    - Seeding initial data
+    - Seeding dummy data, jika ada
+    - Seeding example data, jika ada
     - Cache clear
     - Config clear
     - Route clear
