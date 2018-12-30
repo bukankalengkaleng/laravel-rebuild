@@ -148,10 +148,18 @@ class Rebuild extends Command
             if ($this->confirm('Install example data?')) {
                 $this->info('[START] Install example data..........');
 
-                $this->call('db:seed', [
-                    '--class' => config('rebuild.example.seeder_name'),
-                    '--force' => true,
-                ]);
+                try {
+                    $this->call('db:seed', [
+                        '--class' => config('rebuild.example.seeder_name'),
+                        '--force' => true,
+                    ]);
+                } catch (\Exception $e) {
+                    $this->error($e->getMessage());
+                    $this->info('[ABORT] Install example data.');
+                    $this->line('');
+
+                    return true;
+                }
 
                 $this->info('[DONE ] Install example data.');
                 $this->line('');
