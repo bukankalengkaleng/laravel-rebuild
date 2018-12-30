@@ -96,11 +96,13 @@ class Rebuild extends Command
      */
     protected function rebuildDatabaseSchema()
     {
-        $this->info('[START] Rebuild database schema..........');
+        if (config('rebuild.should_rebuild_database_schema')) {
+            $this->info('[START] Rebuild database schema..........');
 
-        $this->call('migrate:fresh');
+            $this->call('migrate:fresh');
 
-        $this->info('[DONE ] Rebuild database schema.');
+            $this->info('[DONE ] Rebuild database schema.');
+        }
     }
 
     /**
@@ -110,11 +112,13 @@ class Rebuild extends Command
      */
     protected function clearCache()
     {
-        $this->info('[START] Flush the application cache..........');
+        if (config('rebuild.should_clear_cache')) {
+            $this->info('[START] Flush the application cache..........');
 
-        $this->callSilent('cache:clear');
+            $this->callSilent('cache:clear');
 
-        $this->info('[DONE ] Flush the application cache.');
+            $this->info('[DONE ] Flush the application cache.');
+        }
     }
 
     /**
@@ -124,11 +128,13 @@ class Rebuild extends Command
      */
     protected function clearConfig()
     {
-        $this->info('[START] Remove the configuration cache file..........');
+        if (config('rebuild.should_celar_config')) {
+            $this->info('[START] Remove the configuration cache file..........');
 
-        $this->callSilent('config:clear');
+            $this->callSilent('config:clear');
 
-        $this->info('[DONE ] Remove the configuration cache file.');
+            $this->info('[DONE ] Remove the configuration cache file.');
+        }
     }
 
     /**
@@ -138,11 +144,13 @@ class Rebuild extends Command
      */
     protected function clearRoute()
     {
-        $this->info('[START] Remove the route cache file..........');
+        if (config('rebuild.should_clear_route')) {
+            $this->info('[START] Remove the route cache file..........');
 
-        $this->callSilent('route:clear');
+            $this->callSilent('route:clear');
 
-        $this->info('[DONE ] Remove the route cache file.');
+            $this->info('[DONE ] Remove the route cache file.');
+        }
     }
 
     /**
@@ -152,11 +160,13 @@ class Rebuild extends Command
      */
     protected function clearView()
     {
-        $this->info('[START] Clear all compiled view files..........');
+        if (config('rebuild.should_clear_view')) {
+            $this->info('[START] Clear all compiled view files..........');
 
-        $this->callSilent('view:clear');
+            $this->callSilent('view:clear');
 
-        $this->info('[DONE ] Clear all compiled view files.');
+            $this->info('[DONE ] Clear all compiled view files.');
+        }
     }
 
     /**
@@ -166,11 +176,13 @@ class Rebuild extends Command
      */
     protected function flushExpiredPasswordResetToken()
     {
-        $this->info('[START] Flush expired password reset tokens..........');
+        if (config('rebuild.should_flush_expired_password_reset_token')) {
+            $this->info('[START] Flush expired password reset tokens..........');
 
-        $this->callSilent('auth:clear-resets');
+            $this->callSilent('auth:clear-resets');
 
-        $this->info('[DONE ] Flush expired password reset tokens.');
+            $this->info('[DONE ] Flush expired password reset tokens.');
+        }
     }
 
     /**
@@ -180,11 +192,13 @@ class Rebuild extends Command
      */
     protected function clearCompiledClasses()
     {
-        $this->info('[START] Clear compiled class files..........');
+        if (config('rebuild.should_clear_compiled_classes')) {
+            $this->info('[START] Clear compiled class files..........');
 
-        $this->callSilent('clear-compiled');
+            $this->callSilent('clear-compiled');
 
-        $this->info('[DONE ] Clear compiled class files.');
+            $this->info('[DONE ] Clear compiled class files.');
+        }
     }
 
     /**
@@ -194,11 +208,13 @@ class Rebuild extends Command
      */
     protected function rediscoverPackages()
     {
-        $this->info('[START] Rebuild the cached package manifest..........');
+        if (config('rebuild.should_rediscover_packages')) {
+            $this->info('[START] Rebuild the cached package manifest..........');
 
-        $this->callSilent('package:discover');
+            $this->callSilent('package:discover');
 
-        $this->info('[DONE ] Rebuild the cached package manifest.');
+            $this->info('[DONE ] Rebuild the cached package manifest.');
+        }
     }
 
     /**
@@ -208,11 +224,13 @@ class Rebuild extends Command
      */
     protected function createSymbolicLink()
     {
-        $this->info('[START] Create a symbolic link..........');
+        if (config('rebuild.should_create_symbolic_link')) {
+            $this->info('[START] Create a symbolic link..........');
 
-        $this->callSilent('storage:link');
+            $this->callSilent('storage:link');
 
-        $this->info('[DONE ] Create a symbolic link.');
+            $this->info('[DONE ] Create a symbolic link.');
+        }
     }
 
     /**
@@ -222,10 +240,12 @@ class Rebuild extends Command
      */
     protected function runSelfDiagnosis()
     {
-        $this->info('[START] Run self-diagnosis..........');
+        if (config('rebuild.should_self_diagnosis')) {
+            $this->info('[START] Run self-diagnosis..........');
 
-        $this->call('self-diagnosis');
+            $this->call('self-diagnosis');
 
-        $this->info('[DONE ] Run self-diagnosis.');
+            $this->info('[DONE ] Run self-diagnosis.');
+        }
     }
 }

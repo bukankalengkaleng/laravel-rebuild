@@ -19,6 +19,12 @@ class LaravelRebuildServiceProvider extends ServiceProvider
                 Rebuild::class
             ]);
         }
+
+        $this->publishes([
+            __DIR__.'/../config/rebuild.php' => config_path('rebuild.php'),
+        ], 'laravel-rebuild');
+
+        $this->mergeConfigFrom(__DIR__.'/../config/rebuild.php', 'rebuild');
     }
 
     /**
