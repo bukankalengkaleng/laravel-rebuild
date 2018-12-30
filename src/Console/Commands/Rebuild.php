@@ -64,6 +64,7 @@ class Rebuild extends Command
         $this->rebuildDatabaseSchema();
         $this->seedInitialData();
         $this->seedDummyData();
+        $this->seedExampleData();
         $this->clearCache();
         $this->clearConfig();
         $this->clearRoute();
@@ -111,6 +112,11 @@ class Rebuild extends Command
         }
     }
 
+    /**
+     * Seeding dummy data
+     *
+     * @return void
+     */
     protected function seedDummyData()
     {
         if (config('rebuild.dummy.should_seed')) {
@@ -123,6 +129,23 @@ class Rebuild extends Command
                 ]);
 
                 $this->info('[DONE ] Install dummy data.');
+                $this->line('');
+            }
+        }
+    }
+
+    protected function seedExampleData()
+    {
+        if (config('rebuild.example.should_seed')) {
+            if ($this->confirm('Install example data?')) {
+                $this->info('[START] Install example data..........');
+
+                $this->call('db:seed', [
+                    '--class' => config('rebuild.example.seeder_name'),
+                    '--force' => true,
+                ]);
+
+                $this->info('[DONE ] Install example data.');
                 $this->line('');
             }
         }

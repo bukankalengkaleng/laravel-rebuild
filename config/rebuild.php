@@ -12,6 +12,11 @@ return [
         'seeder_name' => 'DummyDataSeeder',
     ],
 
+    'example' => [
+        'should_seed' => false,
+        'seeder_name' => 'ExampleDataSeeder',
+    ],
+
     'should_clear_cache' => true,
     'should_celar_config' => true,
     'should_clear_route' => true,
