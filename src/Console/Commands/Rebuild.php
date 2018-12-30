@@ -123,10 +123,17 @@ class Rebuild extends Command
             if ($this->confirm('Install dummy data?')) {
                 $this->info('[START] Install dummy data..........');
 
-                $this->call('db:seed', [
-                    '--class' => config('rebuild.dummy.seeder_name'),
-                    '--force' => true,
-                ]);
+                try {
+                    $this->call('db:seed', [
+                        '--class' => config('rebuild.dummy.seeder_name'),
+                        '--force' => true,
+                    ]);
+                } catch (\Throwable $e) {
+                    $this->error(config('rebuild.dummy.seeder_name').' is not found.');
+                    $this->line('Continue to the next step...');
+
+                    return true;
+                }
 
                 $this->info('[DONE ] Install dummy data.');
                 $this->line('');
