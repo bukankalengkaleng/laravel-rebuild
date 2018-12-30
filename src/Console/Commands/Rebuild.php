@@ -4,6 +4,7 @@ namespace BukanKalengKaleng\LaravelRebuild\Console\Commands;
 
 use App;
 use Illuminate\Console\Command;
+use Illuminate\Support\Composer;
 
 class Rebuild extends Command
 {
@@ -26,9 +27,11 @@ class Rebuild extends Command
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Composer $composer)
     {
         parent::__construct();
+
+        $this->composer = $composer;
     }
 
     /**
@@ -59,6 +62,7 @@ class Rebuild extends Command
         $this->line('');
 
         $this->rebuildDatabaseSchema();
+        $this->seedInitialData();
         $this->clearCache();
         $this->clearConfig();
         $this->clearRoute();
@@ -80,9 +84,23 @@ class Rebuild extends Command
         if (config('rebuild.should_rebuild_database_schema')) {
             $this->info('[START] Rebuild database schema..........');
 
-            $this->call('migrate:fresh');
+            $this->callSilent('migrate:fresh', ['--force' => true]);
 
             $this->info('[DONE ] Rebuild database schema.');
+            $this->line('');
+        }
+    }
+
+    protected function seedInitialData()
+    {
+        if (config('rebuild.should_seed_initial_data')) {
+            $this->composer->dumpAutoloads();
+
+            $this->info('[START] Install initial data..........');
+
+            $this->call('db:seed', ['--force' => true]);
+
+            $this->info('[DONE ] Install initial data.');
             $this->line('');
         }
     }

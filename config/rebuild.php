@@ -5,6 +5,7 @@ return [
      * Specify what rebuilding process should run
      */
     'should_rebuild_database_schema' => true,
+    'should_seed_initial_data' => true,
     'should_clear_cache' => true,
     'should_celar_config' => true,
     'should_clear_route' => true,
