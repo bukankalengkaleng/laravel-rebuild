@@ -128,9 +128,10 @@ class Rebuild extends Command
                         '--class' => config('rebuild.dummy.seeder_name'),
                         '--force' => true,
                     ]);
-                } catch (\Throwable $e) {
-                    $this->error(config('rebuild.dummy.seeder_name').' is not found.');
-                    $this->line('Continue to the next step...');
+                } catch (\Exception $e) {
+                    $this->error($e->getMessage());
+                    $this->info('[ABORT] Install dummy data.');
+                    $this->line('');
 
                     return true;
                 }
