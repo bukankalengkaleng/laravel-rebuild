@@ -8,12 +8,12 @@ return [
     'should_seed_initial_data' => true,
 
     'dummy' => [
-        'should_seed' => false,
+        'should_seed' => true,
         'seeder_name' => 'DummyDataSeeder',
     ],
 
     'example' => [
-        'should_seed' => false,
+        'should_seed' => true,
         'seeder_name' => 'ExampleDataSeeder',
     ],
 
