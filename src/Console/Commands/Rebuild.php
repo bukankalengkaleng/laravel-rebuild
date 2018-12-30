@@ -59,34 +59,15 @@ class Rebuild extends Command
         $this->line('');
 
         $this->rebuildDatabaseSchema();
-        $this->line('');
-
         $this->clearCache();
-        $this->line('');
-
         $this->clearConfig();
-        $this->line('');
-
         $this->clearRoute();
-        $this->line('');
-
         $this->clearView();
-        $this->line('');
-
         $this->flushExpiredPasswordResetToken();
-        $this->line('');
-
         $this->clearCompiledClasses();
-        $this->line('');
-
         $this->rediscoverPackages();
-        $this->line('');
-
         $this->createSymbolicLink();
-        $this->line('');
-
         $this->runSelfDiagnosis();
-        $this->line('');
     }
 
     /**
@@ -102,6 +83,7 @@ class Rebuild extends Command
             $this->call('migrate:fresh');
 
             $this->info('[DONE ] Rebuild database schema.');
+            $this->line('');
         }
     }
 
@@ -118,6 +100,7 @@ class Rebuild extends Command
             $this->callSilent('cache:clear');
 
             $this->info('[DONE ] Flush the application cache.');
+            $this->line('');
         }
     }
 
@@ -134,6 +117,7 @@ class Rebuild extends Command
             $this->callSilent('config:clear');
 
             $this->info('[DONE ] Remove the configuration cache file.');
+            $this->line('');
         }
     }
 
@@ -150,6 +134,7 @@ class Rebuild extends Command
             $this->callSilent('route:clear');
 
             $this->info('[DONE ] Remove the route cache file.');
+            $this->line('');
         }
     }
 
@@ -166,6 +151,7 @@ class Rebuild extends Command
             $this->callSilent('view:clear');
 
             $this->info('[DONE ] Clear all compiled view files.');
+            $this->line('');
         }
     }
 
@@ -182,6 +168,7 @@ class Rebuild extends Command
             $this->callSilent('auth:clear-resets');
 
             $this->info('[DONE ] Flush expired password reset tokens.');
+            $this->line('');
         }
     }
 
@@ -198,6 +185,7 @@ class Rebuild extends Command
             $this->callSilent('clear-compiled');
 
             $this->info('[DONE ] Clear compiled class files.');
+            $this->line('');
         }
     }
 
@@ -214,6 +202,7 @@ class Rebuild extends Command
             $this->callSilent('package:discover');
 
             $this->info('[DONE ] Rebuild the cached package manifest.');
+            $this->line('');
         }
     }
 
@@ -230,6 +219,7 @@ class Rebuild extends Command
             $this->callSilent('storage:link');
 
             $this->info('[DONE ] Create a symbolic link.');
+            $this->line('');
         }
     }
 
@@ -246,6 +236,7 @@ class Rebuild extends Command
             $this->call('self-diagnosis');
 
             $this->info('[DONE ] Run self-diagnosis.');
+            $this->line('');
         }
     }
 }
