@@ -59,21 +59,21 @@ class Rebuild extends Command
      */
     protected function rebuildSequence()
     {
-        $this->line('');
-
-        $this->rebuildDatabaseSchema();
-        $this->seedInitialData();
-        $this->seedDummyData();
-        $this->seedExampleData();
-        $this->clearCache();
-        $this->clearConfig();
-        $this->clearRoute();
-        $this->clearView();
-        $this->flushExpiredPasswordResetToken();
-        $this->clearCompiledClasses();
-        $this->rediscoverPackages();
-        $this->createSymbolicLink();
-        $this->runSelfDiagnosis();
+        if ($this->confirm('You are about to rebuild the app from scratch. Continue?')) {
+            $this->rebuildDatabaseSchema();
+            $this->seedInitialData();
+            $this->seedDummyData();
+            $this->seedExampleData();
+            $this->clearCache();
+            $this->clearConfig();
+            $this->clearRoute();
+            $this->clearView();
+            $this->flushExpiredPasswordResetToken();
+            $this->clearCompiledClasses();
+            $this->rediscoverPackages();
+            $this->createSymbolicLink();
+            $this->runSelfDiagnosis();
+        }
     }
 
     /**
@@ -86,7 +86,7 @@ class Rebuild extends Command
         if (config('rebuild.should_rebuild_database_schema')) {
             $this->info('[START] Rebuild database schema..........');
 
-            $this->callSilent('migrate:fresh', ['--force' => true]);
+            $this->call('migrate:fresh', ['--force' => true]);
 
             $this->info('[DONE ] Rebuild database schema.');
             $this->line('');
