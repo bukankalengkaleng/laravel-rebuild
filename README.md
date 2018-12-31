@@ -1,12 +1,14 @@
-# <img src="https://seeklogo.com/images/L/laravel-logo-9B01588B1F-seeklogo.com.png" width="24px"> Laravel Rebuild ☄️
+<p align="center"><img src="screenshots/logo.png" width="50%"></p>
+
+<p align="center">This readme is written in Bahasa. <a href="https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/README.EN.md">English version is here</a></p>
+
+---
 
 [![License](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/license)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) 
 [![composer.lock](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/composerlock)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) 
 [![Latest Stable Version](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/v/stable)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) 
 [![Total Downloads](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/downloads)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) 
 [![Build Status](https://travis-ci.org/bukankalengkaleng/laravel-rebuild.svg?branch=master)](https://travis-ci.org/bukankalengkaleng/laravel-rebuild)
-
-> This readme is written in Bahasa. [English version is here](https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/README.EN.md).
 
 ## Deskripsi
 
@@ -56,19 +58,21 @@ Artisan *command* ini akan mempermudahnya.
     - Create symbolic link
     - Self diagnosis
 
-    <img src="screenshots/02.png" width="75%">
-
 Proses *rebuilding* diatas dapat kamu atur dalam `config/rebuild.php`, yang harus kamu *publish* dahulu dengan cara:
 
 ```
 php artisan vendor:publish --tag="laravel-rebuild"
 ```
 
+## Screenshots
+
+<img src="screenshots/02.png" width="75%">
+
 ## Roadmap
 
 Untuk mengetahui rencana kedepan package ini silahkan membaca [Roadmap](https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/ROADMAP.md).
 
-## Kontribusi
+## Kontribusi [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/bukankalengkaleng/laravel-rebuild/issues)
 
 1. Kirim PR
 1. Gak perlu baper kalo PR tertolak

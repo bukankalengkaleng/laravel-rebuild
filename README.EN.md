@@ -1,12 +1,14 @@
-# <img src="https://seeklogo.com/images/L/laravel-logo-9B01588B1F-seeklogo.com.png" width="24px"> Laravel Rebuild ☄️
+<p align="center"><img src="screenshots/logo.png" width="50%"></p>
+
+<p align="center">Readme ini ditulis dalam bahasa Inggris. <a href="https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/README.md">Versi bahasa Indonesianya ada disini</a>.</p>
+
+---
 
 [![License](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/license)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) 
 [![composer.lock](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/composerlock)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) 
 [![Latest Stable Version](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/v/stable)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) 
 [![Total Downloads](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/downloads)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) 
 [![Build Status](https://travis-ci.org/bukankalengkaleng/laravel-rebuild.svg?branch=master)](https://travis-ci.org/bukankalengkaleng/laravel-rebuild)
-
-> Readme ini ditulis dalam bahasa Inggris. [Versi bahasa Indonesianya ada disini](https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/README.md).
 
 ## Description
 
@@ -54,19 +56,21 @@ The rebuilding process of your app could take a time, by running artisan command
     - Create symbolic link
     - Self diagnosis
 
-    <img src="screenshots/02.png" width="75%">
-
 You can adjust how rebuilding process will take action via `config/rebuild.php` file, which you have to publish first:
 
 ```
 php artisan vendor:publish --tag="laravel-rebuild"
 ```
 
+## Screenshots
+
+<img src="screenshots/02.png" width="75%">
+
 ## Roadmap
 
 All planning goes to [Roadmap](https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/ROADMAP.md) file.
 
-## Contributing
+## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/bukankalengkaleng/laravel-rebuild/issues)
 
 1. Send PR
 1. Please do not take it personal if your PR got rejected
