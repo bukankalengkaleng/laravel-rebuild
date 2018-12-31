@@ -2,6 +2,15 @@
 
 All notable changes will be documented in this file.
 
+## [v1.2.1 (2018-12-31)](https://github.com/bukankalengkaleng/laravel-rebuild/compare/v1.2.0...v1.2.1)
+
+### Added
+
+- Add badge: Codeclimate's maintainability
+- Add badge: Codeclimate's coverage test
+- Add badge: Scrutinizer's code quality
+- Add badge: Codecov's code coverage
+
 ## [v1.2.0 (2018-12-30)](https://github.com/bukankalengkaleng/laravel-rebuild/compare/v1.1.1...v1.2.0)
 
 ### Added
