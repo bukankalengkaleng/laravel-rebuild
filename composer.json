@@ -12,7 +12,7 @@
             "role": "Developer"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "beyondcode/laravel-self-diagnosis": "dev-master"
     },
