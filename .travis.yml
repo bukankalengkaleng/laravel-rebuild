@@ -7,3 +7,11 @@ php:
 before_script:
   - composer self-update
   - composer install
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction --prefer-source --dev
+
+script:
+  - vendor/bin/phpunit --coverage-clover=coverage.xml
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t 32a03599-206a-4c69-823f-08206b9f8fa6
