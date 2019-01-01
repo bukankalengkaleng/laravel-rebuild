@@ -165,7 +165,7 @@ class Rebuild extends Command
     protected function clearCache()
     {
         if (config('rebuild.should_clear_cache')) {
-            $this->info('Run artisan \'cache:clear\' command...');
+            $this->line('Run artisan \'cache:clear\' command:');
             $this->call('cache:clear');
             $this->line('');
         }
@@ -179,7 +179,7 @@ class Rebuild extends Command
     protected function clearConfig()
     {
         if (config('rebuild.should_celar_config')) {
-            $this->info('Run artisan \'config:clear\' command...');
+            $this->line('Run artisan \'config:clear\' command:');
             $this->call('config:clear');
             $this->line('');
         }
@@ -193,7 +193,7 @@ class Rebuild extends Command
     protected function clearRoute()
     {
         if (config('rebuild.should_clear_route')) {
-            $this->info('Run artisan \'route:clear\' command...');
+            $this->line('Run artisan \'route:clear\' command:');
             $this->call('route:clear');
             $this->line('');
         }
@@ -207,7 +207,7 @@ class Rebuild extends Command
     protected function clearView()
     {
         if (config('rebuild.should_clear_view')) {
-            $this->info('Run artisan \'view:clear\' command...');
+            $this->line('Run artisan \'view:clear\' command:');
             $this->call('view:clear');
             $this->line('');
         }
@@ -221,7 +221,7 @@ class Rebuild extends Command
     protected function flushExpiredPasswordResetToken()
     {
         if (config('rebuild.should_flush_expired_password_reset_token')) {
-            $this->info('Run artisan \'auth:clear-resets\' command...');
+            $this->line('Run artisan \'auth:clear-resets\' command:');
             $this->call('auth:clear-resets');
             $this->line('');
         }
@@ -235,7 +235,7 @@ class Rebuild extends Command
     protected function clearCompiledClasses()
     {
         if (config('rebuild.should_clear_compiled_classes')) {
-            $this->info('Run artisan \'clear-compiled\' command...');
+            $this->line('Run artisan \'clear-compiled\' command:');
             $this->call('clear-compiled');
             $this->line('');
         }
@@ -249,7 +249,7 @@ class Rebuild extends Command
     protected function rediscoverPackages()
     {
         if (config('rebuild.should_rediscover_packages')) {
-            $this->info('Run artisan \'package:discover\' command...');
+            $this->line('Run artisan \'package:discover\' command:');
             $this->call('package:discover');
             $this->line('');
         }
@@ -263,7 +263,7 @@ class Rebuild extends Command
     protected function createSymbolicLink()
     {
         if (config('rebuild.should_create_symbolic_link')) {
-            $this->info('Run artisan \'storage:link\' command...');
+            $this->line('Run artisan \'storage:link\' command:');
             $this->call('storage:link');
             $this->line('');
         }
@@ -277,7 +277,7 @@ class Rebuild extends Command
     protected function runSelfDiagnosis()
     {
         if (config('rebuild.should_self_diagnosis')) {
-            $this->info('Run artisan \'self-diagosis\' command...');
+            $this->line('Run artisan \'self-diagosis\' command:');
             $this->call('self-diagnosis');
             $this->line('');
         }
