@@ -2,6 +2,13 @@
 
 All notable changes will be documented in this file.
 
+## [v1.2.3 (2019-01-01)](https://github.com/bukankalengkaleng/laravel-rebuild/compare/v1.2.2...v1.2.3)
+
+### Changed
+
+- Update screenshots
+- Change command outputs
+
 ## [v1.2.2 (2019-01-01)](https://github.com/bukankalengkaleng/laravel-rebuild/compare/v1.2.1...v1.2.2)
 
 ### Changed
