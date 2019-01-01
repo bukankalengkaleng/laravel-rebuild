@@ -62,8 +62,8 @@ php artisan vendor:publish --tag="laravel-rebuild"
 
 ## Screenshots
 
-<img src="screenshots/01.png" width="45%">
-<img src="screenshots/02.png" width="45%">
+<img src="screenshots/01.png" width="40%">
+<img src="screenshots/02.png" width="40%">
 
 ## Roadmap
 
