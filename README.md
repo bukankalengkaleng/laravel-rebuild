@@ -21,7 +21,7 @@ Artisan *command* ini akan mempermudahnya.
 ## Instalasi
 
 1. Jalankan perintah:
-    ```
+    ```bash
     composer require --dev bukankalengkaleng/laravel-rebuild
     ```
 
@@ -38,7 +38,7 @@ Artisan *command* ini akan mempermudahnya.
 ## Cara Menggunakan
 
 1. Jalankan perintah:
-    ```
+    ```bash
     php artisan rebuild
     ```
 1. Proses *rebuilding* aplikasi yang akan dilakukan adalah sebagai berikut:
@@ -58,7 +58,7 @@ Artisan *command* ini akan mempermudahnya.
 
 Proses *rebuilding* diatas dapat kamu atur dalam `config/rebuild.php`, yang harus kamu *publish* dahulu dengan cara:
 
-```
+```bash
 php artisan vendor:publish --tag="laravel-rebuild"
 ```
 
