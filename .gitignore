@@ -3,4 +3,4 @@
 /docs
 /vendor
 *.lock
-*.log
+.phpunit.result.cache
