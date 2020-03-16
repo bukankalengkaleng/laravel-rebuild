@@ -2,7 +2,6 @@
 
 namespace BukanKalengKaleng\LaravelRebuild\Console\Commands;
 
-use App;
 use Illuminate\Console\Command;
 use Illuminate\Support\Composer;
 
@@ -41,7 +40,7 @@ class Rebuild extends Command
      */
     public function handle()
     {
-        if (App::environment(['prod', 'production'])) {
+        if (app()->environment(['prod', 'production'])) {
             if ($this->confirm('You are in PRODUCTION environment. Continue?')) {
                 $this->rebuildSequence();
 
