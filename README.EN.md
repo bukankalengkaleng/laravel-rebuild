@@ -4,7 +4,7 @@
 
 ---
 
-| Development | Code Quality | Release | 
+| Development | Code Quality | Release |
 | :---------: | :----------: | :-----: |
 | [![Build Status](https://travis-ci.org/bukankalengkaleng/laravel-rebuild.svg?branch=master)](https://travis-ci.org/bukankalengkaleng/laravel-rebuild) <br> [![Maintainability](https://api.codeclimate.com/v1/badges/54cf95d1014227c6e4c0/maintainability)](https://codeclimate.com/github/bukankalengkaleng/laravel-rebuild/maintainability) <br> [![Test Coverage](https://api.codeclimate.com/v1/badges/54cf95d1014227c6e4c0/test_coverage)](https://codeclimate.com/github/bukankalengkaleng/laravel-rebuild/test_coverage) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/?branch=master) <br> [![codecov](https://codecov.io/gh/bukankalengkaleng/laravel-rebuild/branch/master/graph/badge.svg)](https://codecov.io/gh/bukankalengkaleng/laravel-rebuild) <br> [![Code Intelligence Status](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence) | [![Total Downloads](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/downloads)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) <br> [![Latest Stable Version](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/v/stable)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) <br> [![License](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/license)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) |
 
@@ -19,7 +19,8 @@ The rebuilding process of your app could take a time, by running artisan command
 ## Installation
 
 1. Run this command:
-    ```
+
+    ```bash
     composer require --dev bukankalengkaleng/laravel-rebuild
     ```
 
@@ -31,14 +32,17 @@ The rebuilding process of your app could take a time, by running artisan command
         BukanKalengKaleng\LaravelRebuild\LaravelRebuildServiceProvider::class,
     ];
     ```
+
 1. Make sure the connection to the database
 
 ## Usage
 
 1. Run `rebuild` artisan command
-    ```
+
+    ```bash
     php artisan rebuild
     ```
+
 1. The rebuilding process will take actions as follow:
     - Re-create database schema
     - Seeding initial data
@@ -56,7 +60,7 @@ The rebuilding process of your app could take a time, by running artisan command
 
 You can adjust how rebuilding process will take action via `config/rebuild.php` file, which you have to publish first:
 
-```
+```bash
 php artisan vendor:publish --tag="laravel-rebuild"
 ```
 

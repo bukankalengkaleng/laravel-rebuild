@@ -4,7 +4,7 @@
 
 ---
 
-| Development | Code Quality | Release | 
+| Development | Code Quality | Release |
 | :---------: | :----------: | :-----: |
 | [![Build Status](https://travis-ci.org/bukankalengkaleng/laravel-rebuild.svg?branch=master)](https://travis-ci.org/bukankalengkaleng/laravel-rebuild) <br> [![Maintainability](https://api.codeclimate.com/v1/badges/54cf95d1014227c6e4c0/maintainability)](https://codeclimate.com/github/bukankalengkaleng/laravel-rebuild/maintainability) <br> [![Test Coverage](https://api.codeclimate.com/v1/badges/54cf95d1014227c6e4c0/test_coverage)](https://codeclimate.com/github/bukankalengkaleng/laravel-rebuild/test_coverage) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/?branch=master) <br> [![codecov](https://codecov.io/gh/bukankalengkaleng/laravel-rebuild/branch/master/graph/badge.svg)](https://codecov.io/gh/bukankalengkaleng/laravel-rebuild) <br> [![Code Intelligence Status](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence) | [![Total Downloads](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/downloads)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) <br> [![Latest Stable Version](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/v/stable)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) <br> [![License](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/license)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) |
 
@@ -21,6 +21,7 @@ Artisan *command* ini akan mempermudahnya.
 ## Instalasi
 
 1. Jalankan perintah:
+
     ```bash
     composer require --dev bukankalengkaleng/laravel-rebuild
     ```
@@ -33,14 +34,17 @@ Artisan *command* ini akan mempermudahnya.
         BukanKalengKaleng\LaravelRebuild\LaravelRebuildServiceProvider::class,
     ];
     ```
+
 1. Pastikan aplikasi sudah bisa konek ke *database*
 
 ## Cara Menggunakan
 
 1. Jalankan perintah:
+
     ```bash
     php artisan rebuild
     ```
+
 1. Proses *rebuilding* aplikasi yang akan dilakukan adalah sebagai berikut:
     - Re-create database schema
     - Seeding initial data
