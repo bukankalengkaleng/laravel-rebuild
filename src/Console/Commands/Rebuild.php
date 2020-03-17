@@ -84,6 +84,10 @@ class Rebuild extends Command
             $this->runApplicationTest();
 
             $this->leaveMaintenanceMode();
+
+            $this->migrateSessionsTable();
+            $this->migrateNotificationsTable();
+            $this->migrateFailedQueueJobsTable();
         }
     }
 
@@ -378,6 +382,84 @@ class Rebuild extends Command
         if (config('rebuild.should_leave_maintenance_mode')) {
             $this->call('up');
             $this->line('');
+        }
+    }
+
+    /**
+     * Migrate sessions table
+     *
+     * @return void
+     */
+    protected function migrateSessionsTable()
+    {
+        if (config('rebuild.should_migrate_sessions_table')) {
+            if ($this->confirm('Migrate sessions table?')) {
+                try {
+                    $this->call('session:table');
+                    $this->call('migrate');
+                } catch (\Exception $e) {
+                    $this->error($e->getMessage());
+                    $this->info('Migrating sessions table is aborted.');
+                    $this->line('');
+
+                    return true;
+                }
+
+                $this->info('Migrating sessions table is done.');
+                $this->line('');
+            }
+        }
+    }
+
+    /**
+     * Migrate notifications table
+     *
+     * @return void
+     */
+    protected function migrateNotificationsTable()
+    {
+        if (config('rebuild.should_migrate_notifications_table')) {
+            if ($this->confirm('Migrate notifications table?')) {
+                try {
+                    $this->call('notification:table');
+                    $this->call('migrate');
+                } catch (\Exception $e) {
+                    $this->error($e->getMessage());
+                    $this->info('Migrating notifications table is aborted.');
+                    $this->line('');
+
+                    return true;
+                }
+
+                $this->info('Migrating notifications table is done.');
+                $this->line('');
+            }
+        }
+    }
+
+    /**
+     * Migrate failed queue jobs table
+     *
+     * @return void
+     */
+    protected function migrateFailedQueueJobsTable()
+    {
+        if (config('rebuild.should_migrate_failed_queue_jobs_table')) {
+            if ($this->confirm('Migrate failed_queue_jobs table?')) {
+                try {
+                    $this->call('queue:failed-table');
+                    $this->call('migrate');
+                } catch (\Exception $e) {
+                    $this->error($e->getMessage());
+                    $this->info('Migrating failed queue jobs table is aborted.');
+                    $this->line('');
+
+                    return true;
+                }
+
+                $this->info('Migrating failed queue jobs table is done.');
+                $this->line('');
+            }
         }
     }
 }

@@ -38,4 +38,8 @@ return [
     'should_run_application_test' => true,
 
     'should_leave_maintenance_mode' => true,
+
+    'should_migrate_sessions_table' => true,
+    'should_migrate_notifications_table' => true,
+    'should_migrate_failed_queue_jobs_table' => true,
 ];
