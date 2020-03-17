@@ -10,14 +10,16 @@ return [
     'should_rebuild_database_schema' => true,
     'should_seed_initial_data' => true,
 
-    'dummy' => [
-        'should_seed' => true,
-        'seeder_name' => 'DummyDataSeeder',
-    ],
-
-    'example' => [
-        'should_seed' => true,
-        'seeder_name' => 'ExampleDataSeeder',
+    'rebuild' => [
+        'dummy' => [
+            'should_seed' => true,
+            'seeder_name' => 'DummyDataSeeder',
+        ],
+    
+        'example' => [
+            'should_seed' => true,
+            'seeder_name' => 'ExampleDataSeeder',
+        ],
     ],
 
     'should_clear_view' => true,
@@ -26,7 +28,7 @@ return [
     'should_clear_event' => true,
     'should_clear_config' => true,
     'should_clear_compiled_classes' => true,
-    
+
     'should_clear_framework_bootstrap_files' => true,
     'should_cache_framework_bootstrap_files' => true,
 
