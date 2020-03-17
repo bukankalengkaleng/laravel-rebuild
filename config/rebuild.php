@@ -10,16 +10,14 @@ return [
     'should_rebuild_database_schema' => true,
     'should_seed_initial_data' => true,
 
-    'rebuild' => [
-        'dummy' => [
-            'should_seed' => true,
-            'seeder_name' => 'DummyDataSeeder',
-        ],
-    
-        'example' => [
-            'should_seed' => true,
-            'seeder_name' => 'ExampleDataSeeder',
-        ],
+    'dummy' => [
+        'should_seed' => true,
+        'seeder_name' => 'DummyDataSeeder',
+    ],
+
+    'example' => [
+        'should_seed' => true,
+        'seeder_name' => 'ExampleDataSeeder',
     ],
 
     'should_clear_view' => true,
