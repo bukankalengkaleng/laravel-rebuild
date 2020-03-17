@@ -1,9 +1,6 @@
 <?php
 
 return [
-    /**
-     * Specify what rebuilding process should run.
-     */
     'should_enter_maintenance_mode' => true,
 
     'should_rebuild_database_schema' => true,

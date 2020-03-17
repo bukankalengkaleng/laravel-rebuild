@@ -2,8 +2,8 @@
 
 namespace BukanKalengKaleng\LaravelRebuild;
 
-use BukanKalengKaleng\LaravelRebuild\Console\Commands\Rebuild;
 use Illuminate\Support\ServiceProvider;
+use BukanKalengKaleng\LaravelRebuild\Console\Commands\Rebuild;
 
 class LaravelRebuildServiceProvider extends ServiceProvider
 {
