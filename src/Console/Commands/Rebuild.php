@@ -197,7 +197,7 @@ class Rebuild extends Command
     protected function clearView()
     {
         if (config('rebuild.should_clear_view')) {
-            $this->line('Run artisan \'view:clear\' command:');
+            $this->line('Run \'artisan view:clear\' command:');
             $this->call('view:clear');
             $this->line('');
         }
@@ -211,7 +211,7 @@ class Rebuild extends Command
     protected function clearCache()
     {
         if (config('rebuild.should_clear_cache')) {
-            $this->line('Run artisan \'cache:clear\' command:');
+            $this->line('Run \'artisan cache:clear\' command:');
             $this->call('cache:clear');
             $this->line('');
         }
@@ -225,7 +225,7 @@ class Rebuild extends Command
     protected function clearRoute()
     {
         if (config('rebuild.should_clear_route')) {
-            $this->line('Run artisan \'route:clear\' command:');
+            $this->line('Run \'artisan route:clear\' command:');
             $this->call('route:clear');
             $this->line('');
         }
@@ -239,7 +239,7 @@ class Rebuild extends Command
     protected function clearEvent()
     {
         if (config('rebuild.should_clear_event')) {
-            $this->line('Run artisan \'event:clear\' command:');
+            $this->line('Run \'artisan event:clear\' command:');
             $this->call('event:clear');
             $this->line('');
         }
@@ -253,7 +253,7 @@ class Rebuild extends Command
     protected function clearConfig()
     {
         if (config('rebuild.should_clear_config')) {
-            $this->line('Run artisan \'config:clear\' command:');
+            $this->line('Run \'artisan config:clear\' command:');
             $this->call('config:clear');
             $this->line('');
         }
@@ -267,7 +267,7 @@ class Rebuild extends Command
     protected function clearCompiledClasses()
     {
         if (config('rebuild.should_clear_compiled_classes')) {
-            $this->line('Run artisan \'clear-compiled\' command:');
+            $this->line('Run \'artisan clear-compiled\' command:');
             $this->call('clear-compiled');
             $this->line('');
         }
@@ -281,7 +281,7 @@ class Rebuild extends Command
     protected function clearFrameworkBootstrapFiles()
     {
         if (config('rebuild.should_clear_framework_bootstrap_files')) {
-            $this->line('Run artisan \'optimize:clear\' command:');
+            $this->line('Run \'artisan optimize:clear\' command:');
             $this->call('optimize:clear');
             $this->line('');
         }
@@ -295,7 +295,7 @@ class Rebuild extends Command
     protected function cacheFrameworkBootstrapFiles()
     {
         if (config('rebuild.should_cache_framework_bootstrap_files')) {
-            $this->line('Run artisan \'optimize\' command:');
+            $this->line('Run \'artisan optimize\' command:');
             $this->call('optimize');
             $this->line('');
         }
@@ -309,7 +309,7 @@ class Rebuild extends Command
     protected function rediscoverPackages()
     {
         if (config('rebuild.should_rediscover_packages')) {
-            $this->line('Run artisan \'package:discover\' command:');
+            $this->line('Run \'artisan package:discover\' command:');
             $this->call('package:discover');
             $this->line('');
         }
@@ -323,7 +323,7 @@ class Rebuild extends Command
     protected function createSymbolicLink()
     {
         if (config('rebuild.should_create_symbolic_link')) {
-            $this->line('Run artisan \'storage:link\' command:');
+            $this->line('Run \'artisan storage:link\' command:');
             $this->call('storage:link');
             $this->line('');
         }
@@ -338,7 +338,7 @@ class Rebuild extends Command
     protected function runSelfDiagnosis()
     {
         if (config('rebuild.should_self_diagnosis')) {
-            $this->line('Run artisan \'self-diagosis\' command:');
+            $this->line('Run \'artisan self-diagosis\' command:');
             $this->call('self-diagnosis');
             $this->line('');
         }
