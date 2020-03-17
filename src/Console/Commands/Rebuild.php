@@ -59,6 +59,7 @@ class Rebuild extends Command
     protected function rebuildSequence()
     {
         if ($this->confirm('You are about to rebuild the app from scratch. Continue?')) {
+            $this->setToMaintenanceMode();
             $this->rebuildDatabaseSchema();
             $this->seedInitialData();
             $this->seedDummyData();
@@ -72,6 +73,20 @@ class Rebuild extends Command
             $this->rediscoverPackages();
             $this->createSymbolicLink();
             $this->runSelfDiagnosis();
+            $this->wakeUpFromMaintenanceMode();
+        }
+    }
+
+    /**
+     * Rebuild database schema
+     *
+     * @return void
+     */
+    protected function setToMaintenanceMode()
+    {
+        if (config('rebuild.should_set_to_maintenance_mode')) {
+            $this->call('down');
+            $this->line('');
         }
     }
 
@@ -278,6 +293,19 @@ class Rebuild extends Command
         if (config('rebuild.should_self_diagnosis')) {
             $this->line('Run artisan \'self-diagosis\' command:');
             $this->call('self-diagnosis');
+            $this->line('');
+        }
+    }
+
+    /**
+     * Rebuild database schema
+     *
+     * @return void
+     */
+    protected function wakeUpFromMaintenanceMode()
+    {
+        if (config('rebuild.should_wake_up_from_maintenance_mode')) {
+            $this->call('up');
             $this->line('');
         }
     }

@@ -5,6 +5,7 @@ return [
      * Specify what rebuilding process should run
      */
 
+    'should_set_to_maintenance_mode' => true,
     'should_rebuild_database_schema' => true,
     'should_seed_initial_data' => true,
 
@@ -29,4 +30,6 @@ return [
 
     // Run 'laravel-self-diagnosis' by BeyondCode
     'should_self_diagnosis' => true,
+
+    'should_wake_up_from_maintenance_mode' => true,
 ];
