@@ -76,7 +76,6 @@ class Rebuild extends Command
             $this->clearFrameworkBootstrapFiles();
             $this->cacheFrameworkBootstrapFiles();
 
-            $this->flushExpiredPasswordResetToken();
             $this->rediscoverPackages();
             $this->createSymbolicLink();
             
@@ -298,20 +297,6 @@ class Rebuild extends Command
         if (config('rebuild.should_cache_framework_bootstrap_files')) {
             $this->line('Run artisan \'optimize\' command:');
             $this->call('optimize');
-            $this->line('');
-        }
-    }
-
-    /**
-     * Flush expired password reset token
-     *
-     * @return void
-     */
-    protected function flushExpiredPasswordResetToken()
-    {
-        if (config('rebuild.should_flush_expired_password_reset_token')) {
-            $this->line('Run artisan \'auth:clear-resets\' command:');
-            $this->call('auth:clear-resets');
             $this->line('');
         }
     }

@@ -30,7 +30,6 @@ return [
     'should_clear_framework_bootstrap_files' => true,
     'should_cache_framework_bootstrap_files' => true,
 
-    'should_flush_expired_password_reset_token' => true,
     'should_rediscover_packages' => true,
     'should_create_symbolic_link' => true,
 
