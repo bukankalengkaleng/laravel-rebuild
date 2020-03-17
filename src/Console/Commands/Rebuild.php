@@ -59,32 +59,42 @@ class Rebuild extends Command
     protected function rebuildSequence()
     {
         if ($this->confirm('You are about to rebuild the app from scratch. Continue?')) {
-            $this->setToMaintenanceMode();
+            $this->enterMaintenanceMode();
+
             $this->rebuildDatabaseSchema();
             $this->seedInitialData();
             $this->seedDummyData();
             $this->seedExampleData();
-            $this->clearCache();
-            $this->clearConfig();
-            $this->clearRoute();
+
             $this->clearView();
-            $this->flushExpiredPasswordResetToken();
+            $this->clearCache();
+            $this->clearRoute();
+            $this->clearEvent();
+            $this->clearConfig();
             $this->clearCompiledClasses();
+
+            $this->clearFrameworkBootstrapFiles();
+            $this->cacheFrameworkBootstrapFiles();
+
+            $this->flushExpiredPasswordResetToken();
             $this->rediscoverPackages();
             $this->createSymbolicLink();
+            
             $this->runSelfDiagnosis();
-            $this->wakeUpFromMaintenanceMode();
+            $this->runApplicationTest();
+
+            $this->leaveMaintenanceMode();
         }
     }
 
     /**
-     * Rebuild database schema
+     * Set application to Maintenance Mode
      *
      * @return void
      */
-    protected function setToMaintenanceMode()
+    protected function enterMaintenanceMode()
     {
-        if (config('rebuild.should_set_to_maintenance_mode')) {
+        if (config('rebuild.should_enter_maintenance_mode')) {
             $this->call('down');
             $this->line('');
         }
@@ -148,6 +158,11 @@ class Rebuild extends Command
         }
     }
 
+    /**
+     * Seeding example data
+     *
+     * @return void
+     */
     protected function seedExampleData()
     {
         if (config('rebuild.example.should_seed')) {
@@ -172,6 +187,20 @@ class Rebuild extends Command
     }
 
     /**
+     * Clear view
+     *
+     * @return void
+     */
+    protected function clearView()
+    {
+        if (config('rebuild.should_clear_view')) {
+            $this->line('Run artisan \'view:clear\' command:');
+            $this->call('view:clear');
+            $this->line('');
+        }
+    }
+
+    /**
      * Clear cache
      *
      * @return void
@@ -181,20 +210,6 @@ class Rebuild extends Command
         if (config('rebuild.should_clear_cache')) {
             $this->line('Run artisan \'cache:clear\' command:');
             $this->call('cache:clear');
-            $this->line('');
-        }
-    }
-
-    /**
-     * Clear config
-     *
-     * @return void
-     */
-    protected function clearConfig()
-    {
-        if (config('rebuild.should_celar_config')) {
-            $this->line('Run artisan \'config:clear\' command:');
-            $this->call('config:clear');
             $this->line('');
         }
     }
@@ -214,29 +229,29 @@ class Rebuild extends Command
     }
 
     /**
-     * Clear view
+     * Clear event
      *
      * @return void
      */
-    protected function clearView()
+    protected function clearEvent()
     {
-        if (config('rebuild.should_clear_view')) {
-            $this->line('Run artisan \'view:clear\' command:');
-            $this->call('view:clear');
+        if (config('rebuild.should_clear_event')) {
+            $this->line('Run artisan \'event:clear\' command:');
+            $this->call('event:clear');
             $this->line('');
         }
     }
 
     /**
-     * Flush expired password reset token
+     * Clear config
      *
      * @return void
      */
-    protected function flushExpiredPasswordResetToken()
+    protected function clearConfig()
     {
-        if (config('rebuild.should_flush_expired_password_reset_token')) {
-            $this->line('Run artisan \'auth:clear-resets\' command:');
-            $this->call('auth:clear-resets');
+        if (config('rebuild.should_clear_config')) {
+            $this->line('Run artisan \'config:clear\' command:');
+            $this->call('config:clear');
             $this->line('');
         }
     }
@@ -256,7 +271,49 @@ class Rebuild extends Command
     }
 
     /**
-     * Rebuild packages manifest cache
+     * Clear framework bootstrap files
+     *
+     * @return void
+     */
+    protected function clearFrameworkBootstrapFiles()
+    {
+        if (config('rebuild.should_clear_framework_bootstrap_files')) {
+            $this->line('Run artisan \'optimize:clear\' command:');
+            $this->call('optimize:clear');
+            $this->line('');
+        }
+    }
+
+    /**
+     * Cache framework bootstrap files
+     *
+     * @return void
+     */
+    protected function cacheFrameworkBootstrapFiles()
+    {
+        if (config('rebuild.should_cache_framework_bootstrap_files')) {
+            $this->line('Run artisan \'optimize\' command:');
+            $this->call('optimize');
+            $this->line('');
+        }
+    }
+
+    /**
+     * Flush expired password reset token
+     *
+     * @return void
+     */
+    protected function flushExpiredPasswordResetToken()
+    {
+        if (config('rebuild.should_flush_expired_password_reset_token')) {
+            $this->line('Run artisan \'auth:clear-resets\' command:');
+            $this->call('auth:clear-resets');
+            $this->line('');
+        }
+    }
+
+    /**
+     * Rediscover packages
      *
      * @return void
      */
@@ -285,6 +342,7 @@ class Rebuild extends Command
 
     /**
      * Run BeyondCode's Laravel Self-Diagnosis command
+     * more: https://github.com/beyondcode/laravel-self-diagnosis
      *
      * @return void
      */
@@ -298,13 +356,26 @@ class Rebuild extends Command
     }
 
     /**
-     * Rebuild database schema
+     * Run application tests
      *
      * @return void
      */
-    protected function wakeUpFromMaintenanceMode()
+    protected function runApplicationTest()
     {
-        if (config('rebuild.should_wake_up_from_maintenance_mode')) {
+        if (config('rebuild.should_run_application_test')) {
+            $this->call('test');
+            $this->line('');
+        }
+    }
+
+    /**
+     * Wake up application from Maintenance Mode
+     *
+     * @return void
+     */
+    protected function leaveMaintenanceMode()
+    {
+        if (config('rebuild.should_leave_maintenance_mode')) {
             $this->call('up');
             $this->line('');
         }
