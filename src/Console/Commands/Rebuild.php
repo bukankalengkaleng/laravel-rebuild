@@ -52,7 +52,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Command operation sequence
+     * Command operation sequence.
      *
      * @return mixed
      */
@@ -75,7 +75,7 @@ class Rebuild extends Command
 
             $this->rediscoverPackages();
             $this->createSymbolicLink();
-            
+
             $this->runSelfDiagnosis();
             $this->runApplicationTest();
 
@@ -84,7 +84,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Set application to Maintenance Mode
+     * Set application to Maintenance Mode.
      *
      * @return void
      */
@@ -97,7 +97,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Rebuild database schema
+     * Rebuild database schema.
      *
      * @return void
      */
@@ -111,7 +111,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Seeding initial data
+     * Seeding initial data.
      *
      * @return void
      */
@@ -127,7 +127,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Seeding dummy data
+     * Seeding dummy data.
      *
      * @return void
      */
@@ -155,7 +155,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Seeding example data
+     * Seeding example data.
      *
      * @return void
      */
@@ -183,7 +183,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Migrate sessions table
+     * Migrate sessions table.
      *
      * @return void
      */
@@ -207,7 +207,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Migrate notifications table
+     * Migrate notifications table.
      *
      * @return void
      */
@@ -231,7 +231,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Clear event
+     * Clear event.
      *
      * @return void
      */
@@ -246,8 +246,8 @@ class Rebuild extends Command
 
     /**
      * Clear these following cached files:
-     *  Views, Application cache, Route cache, Configuration cache, and 
-     *  Compiled services and packages files
+     *  Views, Application cache, Route cache, Configuration cache, and
+     *  Compiled services and packages files.
      *
      * @return void
      */
@@ -261,7 +261,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Cache framework bootstrap files
+     * Cache framework bootstrap files.
      *
      * @return void
      */
@@ -275,7 +275,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Rediscover packages
+     * Rediscover packages.
      *
      * @return void
      */
@@ -289,7 +289,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Create symbolic link
+     * Create symbolic link.
      *
      * @return void
      */
@@ -304,7 +304,7 @@ class Rebuild extends Command
 
     /**
      * Run BeyondCode's Laravel Self-Diagnosis command
-     * more: https://github.com/beyondcode/laravel-self-diagnosis
+     * more: https://github.com/beyondcode/laravel-self-diagnosis.
      *
      * @return void
      */
@@ -318,7 +318,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Run application tests
+     * Run application tests.
      *
      * @return void
      */
@@ -331,7 +331,7 @@ class Rebuild extends Command
     }
 
     /**
-     * Wake up application from Maintenance Mode
+     * Wake up application from Maintenance Mode.
      *
      * @return void
      */
