@@ -1,6 +1,10 @@
 {
     "name": "bukankalengkaleng/laravel-rebuild",
     "description": "An artisan command to rebuild your app",
+    "keywords": [
+        "laravel package", 
+        "artisan command"
+    ],
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/bukankalengkaleng/laravel-rebuild",
