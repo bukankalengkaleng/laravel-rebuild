@@ -1,12 +1,14 @@
-<p align="center"><img src="screenshots/logo.png" width="50%"></p>
+# Laravel Rebuild 🏗
 
-<p align="center">Readme ini ditulis dalam bahasa Inggris. <a href="https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/README.md">Versi bahasa Indonesianya ada disini</a>.</p>
+Readme ini ditulis dalam bahasa Inggris. [Versi bahasa Indonesianya ada disini.](README.md)
+
+|     | Status |
+| --- | --- |
+| Release | [![Latest Stable Version](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/v/stable)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) [![Total Downloads](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/downloads)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) [![License](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/license)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) |
+| Code Quality | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/?branch=master) [![codecov](https://codecov.io/gh/bukankalengkaleng/laravel-rebuild/branch/master/graph/badge.svg)](https://codecov.io/gh/bukankalengkaleng/laravel-rebuild) [![Code Intelligence Status](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence) |
+| Development | [![Build Status](https://travis-ci.org/bukankalengkaleng/laravel-rebuild.svg?branch=master)](https://travis-ci.org/bukankalengkaleng/laravel-rebuild) [![Maintainability](https://api.codeclimate.com/v1/badges/54cf95d1014227c6e4c0/maintainability)](https://codeclimate.com/github/bukankalengkaleng/laravel-rebuild/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/54cf95d1014227c6e4c0/test_coverage)](https://codeclimate.com/github/bukankalengkaleng/laravel-rebuild/test_coverage) |
 
 ---
-
-| Development | Code Quality | Release |
-| :---------: | :----------: | :-----: |
-| [![Build Status](https://travis-ci.org/bukankalengkaleng/laravel-rebuild.svg?branch=master)](https://travis-ci.org/bukankalengkaleng/laravel-rebuild) <br> [![Maintainability](https://api.codeclimate.com/v1/badges/54cf95d1014227c6e4c0/maintainability)](https://codeclimate.com/github/bukankalengkaleng/laravel-rebuild/maintainability) <br> [![Test Coverage](https://api.codeclimate.com/v1/badges/54cf95d1014227c6e4c0/test_coverage)](https://codeclimate.com/github/bukankalengkaleng/laravel-rebuild/test_coverage) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/?branch=master) <br> [![codecov](https://codecov.io/gh/bukankalengkaleng/laravel-rebuild/branch/master/graph/badge.svg)](https://codecov.io/gh/bukankalengkaleng/laravel-rebuild) <br> [![Code Intelligence Status](https://scrutinizer-ci.com/g/bukankalengkaleng/laravel-rebuild/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence) | [![Total Downloads](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/downloads)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) <br> [![Latest Stable Version](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/v/stable)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) <br> [![License](https://poser.pugx.org/bukankalengkaleng/laravel-rebuild/license)](https://packagist.org/packages/bukankalengkaleng/laravel-rebuild) |
 
 ## Description
 
