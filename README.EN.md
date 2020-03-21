@@ -72,7 +72,7 @@ php artisan vendor:publish --tag="laravel-rebuild"
 
 ## Roadmap
 
-All planning goes to [Roadmap](https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/ROADMAP.md) file.
+All planning goes to [Roadmap](ROADMAP.md) file.
 
 ## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/bukankalengkaleng/laravel-rebuild/issues)
 
@@ -81,8 +81,8 @@ All planning goes to [Roadmap](https://github.com/bukankalengkaleng/laravel-rebu
 
 ## Changelog
 
-Notable changes are documented in [Changelog](https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/CHANGELOG.md) file.
+Notable changes are documented in [Changelog](CHANGELOG.md) file.
 
 ## License
 
-The MIT License (MIT). Please see [License](https://github.com/bukankalengkaleng/laravel-rebuild/blob/master/LICENSE.md) file for more information.
+The MIT License (MIT). Please see [License](LICENSE.md) file for more information.
