@@ -13,7 +13,7 @@
             "name": "R. Kukuh",
             "email": "rkukuh@gmail.com",
             "homepage": "http://rkukuh.github.io",
-            "role": "Developer"
+            "role": "Owner"
         }
     ],
     "minimum-stability": "dev",
@@ -41,11 +41,17 @@
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
 
     },
+    "config": {
+        "sort-packages": true
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "BukanKalengKaleng\\LaravelRebuild\\LaravelRebuildServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Rebuild": "BukanKalengKaleng\\LaravelRebuild\\LaravelRebuildFacade"
+            }
         }
     }
 }
